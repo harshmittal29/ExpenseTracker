@@ -75,7 +75,10 @@ This layer is responsible for showing the view. ViewModel acts as a connection b
 
 Using this coding style we can use both declarive and imperative programming concepts.
 
-
+## Screenshots
+![](screenshots/dashboard.webp)
+![](screenshots/add_expense.webp)
+![](screenshots/timeline.webp)
 
 * Clean architecture by Uncle Bob
 * [Jetpack](https://developer.android.com/jetpack/docs/guide)
