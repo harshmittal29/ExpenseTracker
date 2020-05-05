@@ -4,86 +4,83 @@ Expense Tracker application
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+1. Clone the project 
+```
+git clone https://github.com/mindvalley/Mobile_Android_MVA.git
+```
+2. Open the project in supporting IDE - Android Studio or Intellij
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
+1. Stable version of Android Studio. App uses version 3.6.3
+2. Gradle 5.6.4 or above
+3. If Android studio is outdated > click on Android Studio > Check for updates
+4. Make sure adb is installed. adb is included in the Android SDK Platform-Tools package. You can download this package with the SDK Manager, which installs it at android_sdk/platform-tools/. If it is not installed install it via brew
 ```
-Android studio 3.6.3. Please download a stable version of Android Studio from this link https://developer.android.com/studio/?gclid=Cj0KCQjwncT1BRDhARIsAOQF9Lnom_q7HGaG784ysoe6gTKc2eTWZTr0bHe6W8d2_ptSJlReNlPD7eUaAiC3EALw_wcB&gclsrc=aw.ds
-Gradle 5.6.4
+brew cask install android-platform-tools
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+1. Use the command to build the project
 ```
-Give the example
+./gradlew assembleDebug
 ```
-
-And repeat
-
+2. Connect your Android device via USB on your machine. Make sure to enable USB Debugging Developers Options from settings.
+Follow [this] (https://developer.android.com/studio/debug/dev-options) to enable developer options
+3. Once the project is build successfully, go to your adb installation path and type
 ```
-until finished
+./adb devices
 ```
+You should be able to see the connected device
 
-End with an example of getting some data out of the system or using it for a little demo
+4. Run
+```
+./adb install {local path to your project}/ExpenseTracker/app/build/outputs/apk/debug/app-debug.apk
+```
+Apk will be installed on the attached device. Alternative you can also install the apk from IDE.
 
 ## Running the tests
 
-1. Open terminal from Android Studio 
-2. Run the unit tests using the command  ./gradlew testDebugUnitTest
+1. Open terminal from Android Studio and navigate to project path.
+2. Run the unit tests using the command  
+```
+./gradlew test
+```
+3. Alternatively you can run tests from IDE.
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
+Instrument tests include testing Room Database.
+Run the tests using command
+```
+./gradlew connectedAndroidTest
+```
+Alternatively you can run the tests from IDE.
 
-```
-Give an example
-```
 
 ### And coding style tests
 
-Explain what these tests test and why
+This project is based on clean architecture principals with MVVM
+It has following layers :
 
-```
-Give an example
-```
+1. **Data Layer**
+This layer contains network call and database operations
 
-## Deployment
+2. **Domain Layer**
+This layer contains business logic
 
-Add additional notes about how to deploy this on a live system
+3. **Presentation Layer**
+This layer is responsible for showing the view. ViewModel acts as a connection between presentation layer and inner layers (domain and data).
 
-## Built With
+Using this coding style we can use both declarive and imperative programming concepts.
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* Clean architecture by Uncle Bob
+* [Jetpack](https://developer.android.com/jetpack/docs/guide)
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Harsh Mittal**
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
