@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ExpenseTracker</string>
+    <string name="timeline">Timeline</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="add_expense">Add Expense</string>
+    <string name="add_expense_description">Description</string>
+    <string name="add_expense_amount">Amount</string>
+    <string name="save">Save</string>
+    <string name="default_amount">0.00</string>
+    <string name="no_expense_added">No Expense added</string>
+    <string name="total_spend">Total expenses %1$s %2$s</string>
+    <string name="click_to_add_expense">Click + to add your first expense</string>
+    <string name="description_required">The description could not be blank. Please enter your email</string>
+    <string name="amount_required">The amount could not be blank. Please enter your email</string>
+    <string name="error_message">Something went wrong. Please try again later.</string>
+</resources>

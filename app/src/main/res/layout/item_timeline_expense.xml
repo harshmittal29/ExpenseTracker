@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/padding_10"
+    android:paddingBottom="@dimen/padding_10">
+
+    <TextView
+        android:id="@+id/timeline_category_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingEnd="@dimen/padding_20"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Medical" />
+
+    <TextView
+        android:id="@+id/timeline_description_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingTop="@dimen/padding_5"
+        android:paddingEnd="@dimen/padding_20"
+        android:textColor="@color/hint_grey"
+        android:textSize="@dimen/font_size_12"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/timeline_price_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeline_category_text_view"
+        tools:text="Face masks from Aeon Wellness Store" />
+
+    <TextView
+        android:id="@+id/timeline_price_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingTop="@dimen/padding_5"
+        android:paddingEnd="@dimen/padding_20"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/font_size_20"
+        app:layout_constraintBottom_toBottomOf="@id/timeline_category_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="MYR 100" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/padding_1"
+        android:layout_marginTop="@dimen/padding_10"
+        android:layout_marginStart="@dimen/padding_20"
+        android:layout_marginEnd="@dimen/padding_20"
+        android:background="@color/disabled_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeline_description_text_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

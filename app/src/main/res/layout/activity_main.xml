@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".core.expense.presentation.view.home.MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/home_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorAccent"
+        android:elevation="@dimen/elevation"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.moneylion.expensetracker.custom_views.NonSwipeableViewPager
+        android:id="@+id/home_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/dashboard_tab_button"
+        app:layout_constraintTop_toBottomOf="@id/home_toolbar" />
+
+    <View
+        android:id="@+id/bottom_shadow"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/shadow_height"
+        android:background="@drawable/shadow_bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:translationZ="@dimen/padding_90dp"
+        android:elevation="@dimen/elevation"
+        app:layout_constraintBottom_toTopOf="@+id/dashboard_tab_button" />
+
+    <TextView
+        android:id="@+id/dashboard_tab_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_feedback"
+        android:drawableTop="@drawable/ic_ico_dashboard"
+        android:drawablePadding="@dimen/padding_5"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingTop="@dimen/padding_10"
+        android:paddingBottom="@dimen/padding_10"
+        android:text="@string/dashboard"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/timeline_tab_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/timeline_tab_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_feedback"
+        android:drawableTop="@drawable/ic_ico_timeline"
+        android:gravity="center"
+        android:drawablePadding="@dimen/padding_5"
+        android:maxLines="1"
+        android:paddingTop="@dimen/padding_10"
+        android:paddingBottom="@dimen/padding_10"
+        android:text="@string/timeline"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/dashboard_tab_button" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_expense_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/add_expense"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/timeline_tab_button"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+def rootConfiguration = rootProject.ext
+
+android {
+    compileSdkVersion rootConfiguration.compileSdkVersion
+    buildToolsVersion rootConfiguration.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.moneylion.expensetracker"
+        minSdkVersion rootConfiguration.minSdkVersion
+        targetSdkVersion rootConfiguration.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.core:core-ktx:$rootConfiguration.androidxVersion"
+    implementation "androidx.appcompat:appcompat:$rootConfiguration.appcompactVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootConfiguration.constraintLayoutVersion"
+    implementation "com.google.android.material:material:$rootConfiguration.appcompactVersion"
+
+    // Room components
+    implementation "androidx.room:room-runtime:$rootConfiguration.roomVersion"
+    kapt "androidx.room:room-compiler:$rootConfiguration.roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$rootConfiguration.roomVersion"
+    implementation "androidx.room:room-rxjava2:$rootConfiguration.roomVersion"
+    implementation "androidx.room:room-ktx:$rootConfiguration.roomVersion"
+
+    // Dagger - Dependency Injection
+    implementation "com.google.dagger:dagger:$rootConfiguration.daggerVersion"
+    implementation "com.google.dagger:dagger-android:$rootConfiguration.daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$rootConfiguration.daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$rootConfiguration.daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$rootConfiguration.daggerVersion"
+
+    // Android x
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootConfiguration.archLifecycleVersion"
+
+    // Network
+    implementation "com.squareup.retrofit2:retrofit:${rootConfiguration.retrofitVersion}"
+    implementation "com.squareup.retrofit2:converter-gson:${rootConfiguration.retrofitVersion}"
+
+    testImplementation "junit:junit:$rootConfiguration.junitVersion"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$rootConfiguration.coroutineTestVersion"
+    testImplementation "org.mockito:mockito-core:$rootConfiguration.mockitoVersion"
+    testImplementation "androidx.test:core:$rootConfiguration.androidXTestCoreVersion"
+    testImplementation "org.robolectric:robolectric:$rootConfiguration.robolectricVersion"
+    androidTestImplementation "androidx.test.ext:junit:$rootConfiguration.androidxTestingVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootConfiguration.espressoVersion"
+    testImplementation "androidx.test:core-ktx:$rootConfiguration.androidXTestCoreVersion"
+    testImplementation "androidx.arch.core:core-testing:$rootConfiguration.testingCore"
+    testImplementation "org.json:json:$rootConfiguration.jsonVersion"
+
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="expense_categories">
+        <item>Groceries</item>
+        <item>Medical</item>
+        <item>Education</item>
+        <item>Financial Services</item>
+        <item>Accommodation</item>
+        <item>Food &amp; Beverages</item>
+        <item>Entertainment</item>
+        <item>Insurance</item>
+        <item>Retail</item>
+        <item>Sports</item>
+        <item>Telecommunication</item>
+        <item>Utilities</item>
+        <item>Petrol</item>
+        <item>Transportation</item>
+        <item>Travel</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="expense_currency">
+        <item>MYR</item>
+    </string-array>
+</resources>
