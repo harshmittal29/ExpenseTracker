@@ -1,6 +1,6 @@
-# Project Title
+# Expense Tracker
 
-Expense Tracker application
+Simple application to track daily expenses
 
 ## Getting Started
 
