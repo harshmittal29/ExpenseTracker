@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:imeOptions="actionNext"
-            android:inputType="textCapWords"
+            android:inputType="textCapSentences"
             android:maxLines="1"
             android:textColor="@color/black"
             android:textSize="@dimen/font_size_16">
